@@ -1,0 +1,51 @@
+<dx-data-grid id="grid" [dataSource]="userDatasource" [repaintChangesOnly]="true" [showBorders]="true"
+  [rowAlternationEnabled]="true">
+  <dxo-export [enabled]="true" fileName="Suppliers" [allowExportSelectedData]="true">
+  </dxo-export>
+  <dxo-selection mode="multiple" [deferred]="true"></dxo-selection>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-header-filter [visible]="true"></dxo-header-filter>
+  <dxo-search-panel [visible]="true" [width]="240" placeholder="Search..."></dxo-search-panel>
+  <dxo-scrolling mode="virtual"></dxo-scrolling>
+  <!--Editor Form-->
+  <dxo-editing mode="popup" [allowUpdating]="true" [allowAdding]="true" [allowDeleting]="true">
+    <dxo-popup title="Edit User" [showTitle]="true">
+    </dxo-popup>
+    <dxo-form>
+
+      <dxi-item itemType="group" caption="User" [colCount]="1" [colSpan]="1">
+
+        <dxi-item dataField="name"></dxi-item>
+        <dxi-item dataField="surname"></dxi-item>
+        <dxi-item dataField="phoneNumber"></dxi-item>
+        <dxi-item dataField="email"></dxi-item>
+      </dxi-item>
+      <dxi-item itemType="group" caption="Role" [colCount]="1" [colSpan]="1">
+        <dxi-item dataField="userRoles[0].roleId"></dxi-item>
+      </dxi-item>
+      <dxi-item itemType="group" caption="Password Change" [colCount]="1" [colSpan]="1">
+          <dxi-item dataField="passwordHash"></dxi-item>
+      </dxi-item>
+    </dxo-form>
+  </dxo-editing>
+  <!--Editor Form-->
+
+  <!--Hidden Fields-->
+  <dxi-column caption="Hidden fields" [visible]="false">
+    <dxi-column dataField="userRoles[0].roleId" [width]="120" caption="Role">
+      <dxo-lookup [dataSource]="roles" displayExpr="name" valueExpr="id">
+      </dxo-lookup>
+      <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="passwordHash" caption="New Password"></dxi-column>
+  </dxi-column>
+  <!--Hidden Fields-->
+
+  <dxi-column dataField="name"></dxi-column>
+  <dxi-column dataField="surname"></dxi-column>
+  <dxi-column dataField="phoneNumber"></dxi-column>
+  <dxi-column dataField="email">
+      <dxi-validation-rule type="required"></dxi-validation-rule>
+  </dxi-column>
+
+</dx-data-grid>

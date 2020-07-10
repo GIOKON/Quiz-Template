@@ -1,0 +1,111 @@
+<!-- begin panel -->
+<!-- <panel title="{{ componentName }}"> -->
+
+<!-- begin right-content -->
+<div class="right-content" style="padding: 10px; ">
+  <!-- begin register-content -->
+  <div class="register-content">
+    <form action="no-action" (submit)="onFormSubmit($event)">
+
+      <dx-form id="form" [formData]="user" [readOnly]="false" [colCount]="'auto'" [showColonAfterLabel]="true"
+        [showValidationSummary]="true" [minColWidth]="320" [labelLocation]="'top'">
+
+        <dxi-item itemType="group" caption="Personal Data">
+          <dxi-item dataField="email" [disabled]="true">
+            <dxi-validation-rule type="required" message="Email is required">
+            </dxi-validation-rule>
+            <dxi-validation-rule type="email" message="Email is invalid">
+            </dxi-validation-rule>
+          </dxi-item>
+          <dxi-item dataField="name">
+            <dxi-validation-rule type="required" message="Name is required">
+            </dxi-validation-rule>
+            <dxi-validation-rule type="pattern" [pattern]="namePattern" message="Please do not use digits.">
+            </dxi-validation-rule>
+          </dxi-item>
+          <dxi-item dataField="surname">
+            <dxi-validation-rule type="required" message="Surname is required">
+            </dxi-validation-rule>
+            <dxi-validation-rule type="pattern" [pattern]="namePattern" message="Please do not use digits.">
+            </dxi-validation-rule>
+          </dxi-item>
+          <dxi-item dataField="countryId" editorType="dxSelectBox"
+            [editorOptions]="{ dataSource: countries, displayExpr: 'niceName', valueExpr: 'id', searchEnabled: 'true'}"
+            [label]="{text: 'Country'}">
+            <dxi-validation-rule type="required" message="Country is required">
+            </dxi-validation-rule>
+          </dxi-item>
+          <dxi-item dataField="phoneNumber" editorType="dxNumberBox" [label]="{text: 'Phone Number (Phone Number where guests can reach you, area code is automatically determined by set Country)'}"></dxi-item>
+          <dxi-item dataField="endpoint"></dxi-item>
+
+        </dxi-item>
+
+        <!-- Personal Data -->
+        <dxi-item itemType="group" caption="Other Information">
+
+          <dxi-item dataField="description" [label]="{text: 'Description (Small description about your self or business for your guest to know)'}" editCellTemplate="richTextEditorDescription">
+            <div *dxTemplate="let cellInfo of 'richTextEditorDescription'">
+              <dx-html-editor [(value)]="user.description"
+                (onValueChanged)="user.description = $event.value">
+                <dxo-toolbar>
+                  <dxi-item formatName="undo"></dxi-item>
+                  <dxi-item formatName="redo"></dxi-item>
+                  <dxi-item formatName="separator"></dxi-item>
+                  <dxi-item formatName="size"
+                    [formatValues]="['8pt', '10pt', '12pt', '14pt', '18pt', '24pt', '36pt']"></dxi-item>
+                  <dxi-item formatName="font"
+                    [formatValues]="['Arial', 'Courier New', 'Georgia', 'Impact', 'Lucida Console', 'Tahoma', 'Times New Roman', 'Verdana']">
+                  </dxi-item>
+                  <dxi-item formatName="separator"></dxi-item>
+                  <dxi-item formatName="bold"></dxi-item>
+                  <dxi-item formatName="italic"></dxi-item>
+                  <dxi-item formatName="strike"></dxi-item>
+                  <dxi-item formatName="underline"></dxi-item>
+                  <dxi-item formatName="separator"></dxi-item>
+                  <dxi-item formatName="alignLeft"></dxi-item>
+                  <dxi-item formatName="alignCenter"></dxi-item>
+                  <dxi-item formatName="alignRight"></dxi-item>
+                  <dxi-item formatName="alignJustify"></dxi-item>
+                  <dxi-item formatName="separator"></dxi-item>
+                  <dxi-item formatName="header" [formatValues]="[false, 1, 2, 3, 4, 5]"></dxi-item>
+                  <dxi-item formatName="separator"></dxi-item>
+                  <dxi-item formatName="orderedList"></dxi-item>
+                  <dxi-item formatName="bulletList"></dxi-item>
+                  <dxi-item formatName="separator"></dxi-item>
+                  <dxi-item formatName="color"></dxi-item>
+                  <dxi-item formatName="background"></dxi-item>
+                  <dxi-item formatName="separator"></dxi-item>
+                  <dxi-item formatName="link"></dxi-item>
+                  <dxi-item formatName="image"></dxi-item>
+                  <dxi-item formatName="separator"></dxi-item>
+                  <dxi-item formatName="clear"></dxi-item>
+                  <dxi-item formatName="codeBlock"></dxi-item>
+                  <dxi-item formatName="blockquote"></dxi-item>
+                </dxo-toolbar>
+              </dx-html-editor>
+
+            </div>
+          </dxi-item>
+
+
+          <dxi-item dataField="location" [label]="{text: 'City (City you operate from)'}">
+          </dxi-item>
+          <dxi-item dataField="facebook">
+          </dxi-item>
+          <dxi-item dataField="twitter">
+          </dxi-item>
+          <dxi-item dataField="instagram">
+          </dxi-item>
+          <dxi-item itemType="button" horizontalAlignment="right" [buttonOptions]="buttonOptionsEdit"  [editorOptions]="{ disabled: registerActive }">
+          </dxi-item>
+        </dxi-item>
+        <!-- Personal Data -->
+      </dx-form>
+    </form>
+
+
+    <!-- end register-content -->
+  </div>
+  <!-- end right-content -->
+  <!-- </panel> -->
+  <!-- end panel -->

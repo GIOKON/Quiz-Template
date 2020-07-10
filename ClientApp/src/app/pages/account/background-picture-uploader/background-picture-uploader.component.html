@@ -1,0 +1,38 @@
+
+    <form action="no-action">
+      <dx-form id="form" [formData]="user" [readOnly]="false" [showColonAfterLabel]="true"
+        [showValidationSummary]="true" [minColWidth]="233">
+
+<dxi-item>
+  <p>You can find beatiful pictures for free here: <a href="https://unsplash.com/s/photos/appartment" target="_blank">Unsplash</a></p>
+</dxi-item>
+
+        <!-- Logo -->
+        <dxi-item itemType="group" [colCount]="1">
+
+          <dxi-item>
+            <div>
+              <dxi-item>
+                <div class="file-uploader-block">
+                  <dx-file-uploader [multiple]="false" uploadUrl="{{serverUrl}}Api/UploadBackgroundPicture/?userId={{user.id}}"
+                    [allowedFileExtensions]="['.jpg', '.jpeg', '.gif', '.png']" uploadMode="instantly"
+                    (onUploaded)="onUpload($event.request)">
+                  </dx-file-uploader>
+                  <span>Allowed file extensions: <span>.jpg, .jpeg, .gif, .png</span>.</span>
+                </div>
+              </dxi-item>
+            </div>
+          </dxi-item>
+
+          <dxi-item>
+            <div>
+              <dxi-item>
+                <img src="{{serverUrl}}files/{{user.backgroundPicture}}" alt="">
+              </dxi-item>
+            </div>
+          </dxi-item>
+
+        </dxi-item>
+        <!-- Logo -->
+      </dx-form>
+    </form>

@@ -1,0 +1,83 @@
+<div class="body-wrapper  gdlr-icon-dark gdlr-header-transparent">
+  <app-top></app-top>
+
+
+
+  <div id="gdlr-header-substitute">
+  </div>
+  <div class="gdlr-page-title-wrapper"
+    [ngStyle]="{ 'background-image': 'url(assets/img/gallery/1.jpg', 'background-size': 'cover'}">
+    <div class="gdlr-page-title-overlay"></div>
+    <!-- <div class="gdlr-page-title-container container">
+            <h1 class="gdlr-page-title">Room Modern 2 Columns</h1>
+            <span class="gdlr-page-caption">Captions line here</span>
+        </div> -->
+  </div>
+  <!-- is search -->
+  <div class="content-wrapper">
+    <div class="gdlr-content" style="min-height: 600px;">
+
+      <!-- Above Sidebar Section-->
+      <!-- Sidebar With Content Section-->
+      <div class="with-sidebar-wrapper">
+        <div class="with-sidebar-container container">
+
+          <div class="with-sidebar-left eight columns">
+            <div class="with-sidebar-content twelve columns">
+              <section id="content-section-1">
+                <div class="section-container container">
+                  <div class="room-item-wrapper type-modern" style="margin-bottom: 20px;">
+                    <div class="room-item-holder ">
+                      <div class="clear"></div>
+                      <h3>Guest Host Direct</h3>
+                      <h5>Save on commissions</h5>
+                      <br>
+
+                      <h5>Guest Host Direct is a platform created for hosts to promote directly there listings to their
+                        guests.<br> Commissions free able to show phone numbers and exact location for each property.<br>
+                        Platforms mission is to operate in host terms allowing them to gain more income, control and
+                        lowered accommodation cost for its guests.<br> Join us now and make this happen.<br><br> Direct bookings.</h5>
+
+                      <div class="clear"></div>
+
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </section>
+            </div>
+
+            <div class="clear"></div>
+          </div>
+
+
+          <div class="gdlr-sidebar gdlr-right-sidebar four columns">
+            <div class="gdlr-item-start-content sidebar-right-item">
+
+              <div style="width: 420px; margin: auto;">
+                <app-email-form [user]="user" [direct]="true">
+                </app-email-form>
+
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div class="clear"></div>
+        </div>
+      </div>
+
+      <!-- Below Sidebar Section-->
+
+    </div>
+    <!-- gdlr-content -->
+    <div class="clear"></div>
+  </div>
+  <!-- content wrapper -->
+
+
+  <app-bottom [user]="user" [dontShow]="true"></app-bottom>
+</div>
+<!-- body-wrapper -->

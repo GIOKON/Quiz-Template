@@ -1,0 +1,19 @@
+
+<dx-tab-panel #tabPanel [dataSource]="tabs" [selectedIndex]="0" [loop]="false" [animationEnabled]="true"
+[swipeEnabled]="false">
+<div *dxTemplate="let item of 'template1'">
+  <div class="p-14" style="background-color: #2a2a2a;">
+    <app-service-user></app-service-user>
+  </div>
+</div>
+<div *dxTemplate="let item of 'template2'">
+  <div class="p-14" style="background-color: #2a2a2a;">
+    <app-admin-table></app-admin-table>
+  </div>
+</div>
+<!-- <div *dxTemplate="let item of 'template3'">
+  <div class="p-14" style="background-color: #2a2a2a;">
+      <app-super-admin-table></app-super-admin-table>
+  </div>
+</div> -->
+</dx-tab-panel>

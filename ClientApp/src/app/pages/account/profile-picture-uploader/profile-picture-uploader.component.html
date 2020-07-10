@@ -1,0 +1,37 @@
+
+    <form action="no-action">
+      <dx-form id="form" [formData]="user" [readOnly]="false" [showColonAfterLabel]="true"
+        [showValidationSummary]="true" [minColWidth]="233">
+
+
+
+        <!-- Logo -->
+        <dxi-item itemType="group" [colCount]="1">
+
+          <dxi-item>
+            <div>
+              <dxi-item>
+                <div class="file-uploader-block">
+                  <dx-file-uploader [multiple]="true" uploadUrl="{{serverUrl}}Api/UploadProfilePicture/?userId={{user.id}}"
+                    [allowedFileExtensions]="['.jpg', '.jpeg', '.gif', '.png']" uploadMode="instantly"
+                    (onUploaded)="onUpload($event.request)">
+                  </dx-file-uploader>
+                  <span>Allowed file extensions: <span>.jpg, .jpeg, .gif, .png</span>.</span>
+                </div>
+              </dxi-item>
+            </div>
+          </dxi-item>
+
+          <dxi-item>
+            <div>
+              <dxi-item>
+                <img src="{{serverUrl}}files/{{user.profilePicture}}" alt=""
+                  style="width:50%; height:auto;margin-left:25%;">
+              </dxi-item>
+            </div>
+          </dxi-item>
+
+        </dxi-item>
+        <!-- Logo -->
+      </dx-form>
+    </form>

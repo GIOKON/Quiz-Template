@@ -1,0 +1,140 @@
+.c-active{
+  color: #5cb85c;
+}
+
+.fs-10 {
+  font-size: 10px;
+}
+.fs-12 {
+  font-size: 12px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.fs-16 {
+  font-size: 16px;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+.fs-22 {
+  font-size: 22px;
+}
+.fs-24 {
+  font-size: 24px;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.p-4 {
+  padding: 4px;
+}
+.p-6 {
+  padding: 6px;
+}
+.p-8 {
+  padding: 8px;
+}
+.p-10 {
+  padding: 10px;
+}
+.p-12 {
+  padding: 12px;
+}
+.p-14 {
+  padding: 14px;
+}
+.p-15 {
+  padding: 15px;
+}
+
+.mh-10-vh {
+  min-height: 10vh;
+}
+
+.mh-20-vh {
+  min-height: 20vh;
+}
+
+.mh-30-vh {
+  min-height: 30vh;
+}
+
+.mh-40-vh {
+  min-height: 40vh;
+}
+
+.mh-50-vh {
+  min-height: 50vh;
+}
+
+.mh-60-vh {
+  min-height: 60vh;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.mt-2 {
+  margin-top: 2px;
+}
+
+.mt-4 {
+  margin-top: 4px;
+}
+
+.mt-6 {
+  margin-top: 6px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.ul {
+  text-decoration: underline;
+}
+
+.t-a-c{
+  text-align: center;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

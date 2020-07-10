@@ -1,0 +1,84 @@
+
+<!-- begin login -->
+<div class="login login-with-news-feed">
+  <!-- begin news-feed -->
+  <div class="news-feed">
+    <div class="news-image" style="background-image: url(/assets/img/gallery/2.jpg)"></div>
+    <div class="news-caption">
+      <h4 class="caption-title"><b>{{AppName}}</b></h4>
+      <p>
+        {{AppMotto}}
+      </p>
+    </div>
+  </div>
+  <!-- end news-feed -->
+  <!-- begin right-content -->
+  <div class="right-content">
+    <!-- begin login-header -->
+    <div class="login-header">
+      <div class="brand">
+        <span class="logo"></span> <b>{{AppName}}</b>
+        <small>{{SmallMotto}}</small>
+      </div>
+      <div class="icon">
+        <i class="fa fa-sign-in"></i>
+      </div>
+    </div>
+    <!-- end login-header -->
+    <!-- begin login-content -->
+    <div class="login-content">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group m-b-15">
+          <input type="text" formControlName="email" class="form-control form-control-lg" placeholder="Email Address"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">The Email you provided appears to be invalid!</div>
+        </div>
+        </div>
+        <div class="form-group m-b-15">
+          <input type="text" formControlName="firstName" class="form-control form-control-lg" placeholder="Firstname"
+            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">Firstname is required</div>
+        </div>
+      </div>
+        <div class="form-group m-b-15">
+          <input type="text" formControlName="lastName" class="form-control form-control-lg" placeholder="Lastname"
+            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Lastname is required</div>
+        </div>
+        </div>
+        <div class="form-group m-b-15">
+          <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Password"
+           [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+        <div class="form-group m-b-15">
+          <input type="password" formControlName="confirmPassword" class="form-control form-control-lg" placeholder="Confirm Password"
+           [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+          <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+              <div *ngIf="f.confirmPassword.errors.required">Passwords do not match</div>
+          </div>
+        </div>
+
+        <div class="login-buttons">
+          <button type="submit" class="btn btn-success btn-block btn-lg" [disabled]="loading">Register</button>
+        </div>
+        <div class="m-t-20 m-b-40 p-b-40 text-inverse">
+          Already have an account? Click <a [routerLink]="['/login']" class="text-success">here</a> to login.
+        </div>
+        <hr />
+        <p class="text-center text-grey-darker mb-0">
+          &copy; {{AppName}} All Rights Reserved {{Year}}
+        </p>
+      </form>
+    </div>
+    <!-- end login-content -->
+  </div>
+  <!-- end right-container -->
+</div>
+<!-- end login -->
